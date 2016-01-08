@@ -1,0 +1,40 @@
+If you want to use vim as your default editor for the system
+	sudo update-alternatives --config editor
+
+If you require sudo access, so give yourself permissions using visudo
+	visudo
+
+To reconfigure shell to bash instead of dash
+	sudo dpkg-reconfigure dash
+
+Install necessary applications and dev libraries
+	sudo apt-get install openssh-server vim git texi2html chrpath texinfo build-essential git-core subversion cvs wget curl minicom zlib1g-dev libncurses5-dev gettext intltool  fakeroot vim bison flex automake autoconf tree diffstat gawk ia32-libs g++-multilib gcc-multilib lib32z1-dev lib32ncurses5-dev nfs-kernel-server libcurl4-gnutls-dev libssl-dev
+
+If you want to ssh password-less, copy your public key to ~/.ssh/authorized_keys
+
+For NFS setup, create a folder where you want your NFS to be and add it to /etc/exports
+	/nfsroot       *(rw,sync,no_root_squash,no_all_squash)
+	sudo service nfs-kernel-server restart
+
+Git setup
+	git config --global user.name "Your Name"
+	git config --global user.email "Your email"
+
+Apache server setup on Ubuntu
+	sudo apt-get install apache2 apache2-utils
+On Ubuntu14 (apache2.4) /var/www/html/ will be setup as folder
+To password protect a folder
+	modify /etc/apache2/apache2.conf
+
+<Directory /var/www/html/webfolder/secret/>
+        AuthType Basic
+        AuthName "Password Please"
+        AuthUserFile "/var/www/.htpasswd"
+        Require valid-user
+        Order allow,deny
+        Allow from all
+</Directory>
+Can use "Require user bobby" to restrict to a specific user
+In the root folder Directory listing can add  "IndexOptions +ShowForbidden" so that protected folder is visible in parent
+
+

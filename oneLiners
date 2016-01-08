@@ -1,0 +1,20 @@
+To tar a folder verbosely
+	tar cvf folder.tar folder/
+
+To use gzip  z
+	tar cvfz folder.tar.gz folder/
+
+To use bzip2 ( smaller but slower)
+	tar cvfj folder.tar.bz2 folder/
+
+To extract
+	tar xvfz / tar xvfj
+
+7z a -mhe=on -pPASSWORD -t7z d.7z  File.txt
+find . -name '*PATTERN*' -exec bash -c 'rm "$0"' {} \;
+find . -name '*pattern*' -exec bash -c 'mv "$0" "${0/pattern/NEWPATTERN}"' {} \;
+find -name "*extension" -exec grep -rnH "whatever" {} \;
+kill $(ps -ax | grep '[A]utoHathway' | awk '{print $1}')
+https://stackoverflow.com/questions/15290186/find-a-pattern-in-files-and-rename-them
+
+
