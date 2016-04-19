@@ -25,3 +25,4 @@ mkfs.fat /dev/sdb1 -n Bobby
 make >log 2>&1   stdout& stderr
 
 make 2>&1 | tee log   Gets printed to log as well as console
+while true; do echo "Hello World"; sleep 2; done            In infinite loop print Hello World
