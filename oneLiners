@@ -11,11 +11,15 @@ To extract
 	tar xvfz / tar xvfj
 
 7z a -mhe=on -pPASSWORD -t7z d.7z  File.txt
+
 find . -name '*PATTERN*' -exec bash -c 'rm "$0"' {} \;
 find . -name '*pattern*' -exec bash -c 'mv "$0" "${0/pattern/NEWPATTERN}"' {} \;
 find -name "*extension" -exec grep -rnH "whatever" {} \;
-kill $(ps -ax | grep '[A]utoHathway' | awk '{print $1}')
+find . -name *mp4 -exec mv -i {} -t ../ \;
 https://stackoverflow.com/questions/15290186/find-a-pattern-in-files-and-rename-them
+
+
+kill $(ps -ax | grep '[A]utoHathway' | awk '{print $1}')
 
 Formatting a disk
 fdisk -l   To list the partitions
@@ -23,6 +27,6 @@ umount /dev/sdb
 mkfs.fat /dev/sdb1 -n Bobby
 
 make >log 2>&1   stdout& stderr
-
 make 2>&1 | tee log   Gets printed to log as well as console
+
 while true; do echo "Hello World"; sleep 2; done            In infinite loop print Hello World
