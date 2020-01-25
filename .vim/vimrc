@@ -1,0 +1,10 @@
+syntax enable           " enable syntax processing
+colorscheme badwolf     "https://github.com/sjl/badwolf/
+set termguicolors
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4       "indent
+filetype indent on
+filetype plugin on
+set autoindent
